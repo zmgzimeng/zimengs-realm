@@ -16,12 +16,12 @@ export default function Home() {
         
         {/* About Section */}
         <section id="about" className="min-h-screen pt-24 pb-12">
-          <h2 className="font-display text-4xl"># ABOUT</h2>
+          <h2 className="font-display text-4xl"># ABOUT - COMING SOON</h2>
         </section>
 
         {/* Projects Section */}
         <section id="projects" className="min-h-screen pt-24 pb-12">
-          <h2 className="font-display text-4xl"># PROJECTS</h2>
+          <h2 className="font-display text-4xl"># SELECTED WORKS - COMING SOON</h2>
         </section>
       </main>
     </div>
