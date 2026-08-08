@@ -1,5 +1,5 @@
 import localFont from 'next/font/local';
-import { Space_Grotesk } from 'next/font/google';
+import { JetBrains_Mono } from 'next/font/google';
 
 export const myzar = localFont({
   src: [
@@ -13,8 +13,8 @@ export const myzar = localFont({
   display: 'swap',
 });
 
-export const spaceGrotesk = Space_Grotesk({
+export const jetbrainsMono = JetBrains_Mono({
   subsets: ['latin'],
-  variable: '--font-space-grotesk',
+  variable: '--font-jetbrains-mono',
   display: 'swap',
 });

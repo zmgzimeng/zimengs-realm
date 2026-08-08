@@ -2,17 +2,21 @@
 
 @theme inline {
   --font-myzar: var(--font-myzar);
-  --font-space-grotesk: var(--font-space-grotesk);
+  --font-jetbrains-mono: var(--font-jetbrains-mono);
 
-  --color-space-bg: #000216;
-  --color-space-card: #151528;
-  --color-space-border: #242C5B;
+  --color-bg: #000216;
+  --color-card: #151528;
+  --color-border: #242C5B;
 
-  --color-space-text: #FFFFFF;
-  --color-space-muted: #602455;
+  --color-text: #FFFFFF;
+  --color-purple: #602455;
 
-  --color-space-cyan: #5A79B3;
-  --color-space-pink: #A0618A;
+  --color-blue: #5A79B3;
+  --color-cyan: #6FFFE8;
+  --color-pink: #A0618A;
+
+  --color-silver1: #C2D1E0;
+  --color-silver2: #525D6B;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -22,10 +26,14 @@
   }
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: var(--font-space-grotesk), sans-serif;
+  font-family: var(--font-jetbrains-mono), sans-serif;
 }
 
 .font-display {
@@ -33,5 +41,5 @@ body {
 }
 
 .font-body {
-  font-family: var(--font-space-grotesk), sans-serif;
+  font-family: var(--font-jetbrains-mono), sans-serif;
 }
