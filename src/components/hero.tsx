@@ -1,13 +1,20 @@
 'use client';
 
-import { motion, useScroll, useTransform } from 'framer-motion';
+import { motion, useScroll, useTransform, useSpring } from 'framer-motion';
 import FadeIn from '@/components/fadeIn';
 
 export default function Hero() {
   const { scrollY } = useScroll();
-  const yParallax = useTransform(scrollY, [0, 1000], [0, -400]);
-  const extraRotation = useTransform(scrollY, [0, 1000], [0, 40]);
-  const scrollOpacity = useTransform(scrollY, [0, 600], [1, 0]);
+
+  const smoothScrollY = useSpring(scrollY, {
+    stiffness: 100,
+    damping: 30,
+    restDelta: 0.001,
+  });
+
+  const yParallax = useTransform(smoothScrollY, [0, 1000], [0, -400]);
+  const extraRotation = useTransform(smoothScrollY, [0, 1000], [0, 40]);
+  const scrollOpacity = useTransform(smoothScrollY, [0, 600], [1, 0]);
 
   return (
     <section 
@@ -36,10 +43,10 @@ export default function Hero() {
         </FadeIn>
 
         <FadeIn delay={0.35} direction="up">
-          <h1 className="font-display text-[clamp(2.75rem,10vw,8rem)] tracking-wider text-white leading-none">
+          <h1 className="font-display text-[clamp(2rem,8vw,8rem)] tracking-normal sm:tracking-wider text-white leading-none">
             ZIMENG'S
           </h1>
-          <h1 className="font-display text-[clamp(2.75rem,10vw,8rem)] tracking-wider text-transparent [-webkit-text-stroke:2px_#5A79B3] leading-none mt-2">
+          <h1 className="font-display text-[clamp(2rem,8vw,8rem)] tracking-normal sm:tracking-wider text-transparent [-webkit-text-stroke:2px_#5A79B3] leading-none mt-2">
             REALM
           </h1>
         </FadeIn>
@@ -64,7 +71,7 @@ export default function Hero() {
           rotate: extraRotation,
           opacity: scrollOpacity 
         }}
-        className="absolute -bottom-80 -right-150 w-[1000px] h-[1000px] sm:w-[1200px] sm:h-[1200px] pointer-events-none select-none z-0"
+        className="absolute -bottom-80 -right-150 w-[1000px] h-[1000px] sm:w-[1200px] sm:h-[1200px] pointer-events-none select-none z-0 will-change-transform transform-gpu"
       >
         <motion.img
           src="/myzar.svg"

@@ -14,11 +14,16 @@ export default function Starfield() {
 
     let animationFrameId: number;
     let globalOpacity = 1;
+    let canvasFadeIn = 0;
+    const FADE_SPEED = 0.02;
+
     let screen = {
       w: window.innerWidth,
       h: window.innerHeight,
       c: [window.innerWidth * 0.5, window.innerHeight * 0.5],
     };
+
+    let lastWidth = window.innerWidth;
 
     const BASE_DEPTH = 1000;
     const params = { speed: 1, count: 400, life: 5 };
@@ -106,7 +111,6 @@ export default function Starfield() {
         const calculatedOpacity = scale > params.life ? (2 - scale / params.life) * 1.5 : 1;
         const finalOpacity = Math.min(this.opacity, calculatedOpacity);
 
-        // Size scaling expanding up to 6px
         const weight = Math.max(2, Math.pow(scale, 0.8) * 1.2);
 
         this.ctx.beginPath();
@@ -140,9 +144,15 @@ export default function Starfield() {
 
     const update = () => {
       ctx.clearRect(0, 0, canvas.width, canvas.height);
-      ctx.globalAlpha = globalOpacity;
 
-      if (globalOpacity > 0) {
+      if (canvasFadeIn < 1) {
+        canvasFadeIn = Math.min(1, canvasFadeIn + FADE_SPEED);
+      }
+
+      const activeOpacity = globalOpacity * canvasFadeIn;
+      ctx.globalAlpha = activeOpacity;
+
+      if (activeOpacity > 0) {
         ctx.fillStyle = '#00001a';
         ctx.fillRect(0, 0, canvas.width, canvas.height);
 
@@ -159,7 +169,6 @@ export default function Starfield() {
     const handleScroll = () => {
       const scrollY = window.scrollY;
 
-      // Speed up from base 0.5 to max 6
       const scrollVal = 0.5 + scrollY / 80;
       if (scrollVal <= 0.5) {
         params.speed = 0.5;
@@ -179,7 +188,10 @@ export default function Starfield() {
     };
 
     const handleResize = () => {
-      setup();
+      if (window.innerWidth !== lastWidth) {
+        lastWidth = window.innerWidth;
+        setup();
+      }
       handleScroll();
     };
 
