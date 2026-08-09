@@ -5,8 +5,8 @@ import FadeIn from '@/components/fadeIn';
 
 export default function Hero() {
   const { scrollY } = useScroll();
-  const yParallax = useTransform(scrollY, [0, 1000], [0, -1200]);
-  const extraRotation = useTransform(scrollY, [0, 1000], [0, 120]);
+  const yParallax = useTransform(scrollY, [0, 1000], [0, -400]);
+  const extraRotation = useTransform(scrollY, [0, 1000], [0, 40]);
   const scrollOpacity = useTransform(scrollY, [0, 600], [1, 0]);
 
   return (
@@ -16,7 +16,7 @@ export default function Hero() {
 
         <FadeIn delay={0.1} direction="down">
           <p className="font-body text-xs tracking-widest text-silver2 uppercase mb-10">
-            MASSACHUSETTS USA &nbsp;•&nbsp; HOLLISTON HS &nbsp;•&nbsp; CLASS OF 2027
+            ZIMENG ZHANG &nbsp;•&nbsp; MASSACHUSETTS USA &nbsp;•&nbsp; CLASS OF 2027
           </p>
         </FadeIn>
 
@@ -34,19 +34,19 @@ export default function Hero() {
         </FadeIn>
 
         <FadeIn delay={0.35} direction="up">
-          <h1 className="font-display text-6xl sm:text-8xl md:text-9xl tracking-wider text-white leading-none">
-            ZIMENG'S
-          </h1>
-          <h1 className="font-display text-6xl sm:text-8xl md:text-9xl tracking-wider text-transparent [-webkit-text-stroke:2px_#5A79B3] leading-none mt-2">
-            REALM
-          </h1>
+            <h1 className="font-display text-[clamp(3.5rem,11vw,9.5rem)] tracking-wider text-white leading-none">
+                ZIMENG'S
+            </h1>
+            <h1 className="font-display text-[clamp(3.5rem,11vw,9.5rem)] tracking-wider text-transparent [-webkit-text-stroke:2px_#5A79B3] leading-none mt-2">
+                REALM
+             </h1>
         </FadeIn>
 
-        <FadeIn delay={0.5} direction="up" className="mt-20">
+        <FadeIn delay={0.5} direction="up" className="mt-12 sm:mt-20">
           <div>
             <a
               href="#projects"
-              className="inline-flex items-center gap-3 px-6 py-3 rounded-xl backdrop-blur-md bg-[var(--color-bg)]/40 border-2 border-pink/30 text-pink font-body text-sm tracking-wide hover:bg-[var(--color-bg)]/70 hover:border-pink/60 hover:text-cyan transition-all duration-300 group"
+              className="inline-flex items-center gap-[clamp(0.5rem,1.5vw,0.75rem)] px-[clamp(1rem,3vw,1.5rem)] py-[clamp(0.5rem,1.5vw,0.75rem)] rounded-xl backdrop-blur-md bg-[var(--color-bg)]/40 border-2 border-pink/30 text-pink font-body text-[clamp(0.75rem,1.8vw,0.875rem)] tracking-wide hover:bg-[var(--color-bg)]/70 hover:border-pink/60 hover:text-cyan transition-all duration-300 group"
             >
               // TAKE ME SOMEWHERE
               <span className="group-hover:translate-x-1 transition-transform">→</span>

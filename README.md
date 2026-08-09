@@ -2,7 +2,7 @@
 
 Engineered with Next.js 15, Tailwind CSS, and TypeScript. Built to showcase projects and affiliations.
 
-Live Site (Coming Soon): [https://zimengsrealm.com](https://zimengsrealm.com)
+Live Page: [https://zimengsrealm.com](https://zimengsrealm.com)
 
 ---
 
@@ -11,7 +11,7 @@ Live Site (Coming Soon): [https://zimengsrealm.com](https://zimengsrealm.com)
 - **Styling:** [Tailwind CSS v4](https://tailwindcss.com/)
 - **Language:** TypeScript
 - **Icons and Visuals:** Custom SVG vector design created with TurboWarp and custom display typography created with FontForge
-- **Deployment:** Hostinger (Later Vercel)
+- **Deployment:** Vercel and Hostinger
 
 ---
 

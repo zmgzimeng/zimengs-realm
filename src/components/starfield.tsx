@@ -159,14 +159,14 @@ export default function Starfield() {
     const handleScroll = () => {
       const scrollY = window.scrollY;
 
-      // Speed up from base 1 to max 8
-      const scrollVal = 1 + scrollY / 60;
-      if (scrollVal <= 1) {
-        params.speed = 1;
-      } else if (scrollVal < 8) {
+      // Speed up from base 0.5 to max 6
+      const scrollVal = 0.5 + scrollY / 80;
+      if (scrollVal <= 0.5) {
+        params.speed = 0.5;
+      } else if (scrollVal < 6) {
         params.speed = scrollVal;
       } else {
-        params.speed = 8;
+        params.speed = 6;
       }
 
       const aboutSection = document.getElementById('about');
