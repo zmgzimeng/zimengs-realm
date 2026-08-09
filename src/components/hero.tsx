@@ -10,12 +10,14 @@ export default function Hero() {
   const scrollOpacity = useTransform(scrollY, [0, 600], [1, 0]);
 
   return (
-    <section id="top" className="relative min-h-screen flex flex-col justify-center pt-24 pb-12 w-full">
-      
-      <div className="max-w-4xl z-10">
+    <section 
+      id="top" 
+      className="relative min-h-screen flex flex-col justify-center pt-24 pb-12 w-full px-6 sm:px-8 lg:px-12"
+    >
+      <div className="max-w-4xl z-10 w-full">
 
         <FadeIn delay={0.1} direction="down">
-          <p className="font-body text-xs tracking-widest text-silver2 uppercase mb-10">
+          <p className="font-body text-[10px] sm:text-xs tracking-widest text-silver2 uppercase mb-10">
             ZIMENG ZHANG &nbsp;•&nbsp; MASSACHUSETTS USA &nbsp;•&nbsp; CLASS OF 2027
           </p>
         </FadeIn>
@@ -34,12 +36,12 @@ export default function Hero() {
         </FadeIn>
 
         <FadeIn delay={0.35} direction="up">
-            <h1 className="font-display text-[clamp(3.5rem,11vw,9.5rem)] tracking-wider text-white leading-none">
-                ZIMENG'S
-            </h1>
-            <h1 className="font-display text-[clamp(3.5rem,11vw,9.5rem)] tracking-wider text-transparent [-webkit-text-stroke:2px_#5A79B3] leading-none mt-2">
-                REALM
-             </h1>
+          <h1 className="font-display text-[clamp(2.75rem,10vw,8rem)] tracking-wider text-white leading-none">
+            ZIMENG'S
+          </h1>
+          <h1 className="font-display text-[clamp(2.75rem,10vw,8rem)] tracking-wider text-transparent [-webkit-text-stroke:2px_#5A79B3] leading-none mt-2">
+            REALM
+          </h1>
         </FadeIn>
 
         <FadeIn delay={0.5} direction="up" className="mt-12 sm:mt-20">

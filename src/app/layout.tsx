@@ -59,7 +59,10 @@ export default function RootLayout({
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
       </head>
-      <body className="min-h-full w-full overflow-x-hidden flex flex-col font-body bg-slate-950 text-slate-100">
+      <body 
+        className="min-h-full w-full overflow-x-hidden flex flex-col font-body bg-slate-950 text-slate-100"
+        suppressHydrationWarning
+      >
         {children}
       </body>
     </html>
