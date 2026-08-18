@@ -31,7 +31,7 @@ const PROJECTS: Project[] = [
     id: '03',
     title: 'LET ME SEARCH THAT',
     description:
-      'Satirical modernized recreation of LMGTFY to play a searching animation to send to those who are too lazy to search a question themselves.',
+      'Satirical modernized recreation of LMGTFY that plays a searching animation to send to those who are too lazy to search a question themselves.',
     url: 'https://search.zimengsrealm.com/',
     year: '2025',
   },
