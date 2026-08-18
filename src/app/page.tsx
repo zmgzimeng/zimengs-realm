@@ -1,7 +1,7 @@
 import Navbar from '@/components/Navbar';
 import Hero from '@/components/Hero';
+import Works from '@/components/Works';
 import About from '@/components/About';
-import Projects from '@/components/Projects';
 import Affiliations from '@/components/Affiliations';
 import GridOverlay from '@/components/GridOverlay';
 import Starfield from '@/components/Starfield';
@@ -19,10 +19,10 @@ export default function Home() {
         <Hero />
         <Divider className="my-8" />
 
-        <About />
+        <Works />
         <Divider className="my-8" />
 
-        <Projects />
+        <About />
         <Divider className="my-8" />
 
         <Affiliations />

@@ -2,7 +2,7 @@
 
 import FadeIn from '@/components/FadeIn';
 
-interface Project {
+interface Works {
   id: string;
   title: string;
   description: string;
@@ -10,7 +10,7 @@ interface Project {
   year: string;
 }
 
-const PROJECTS: Project[] = [
+const WORKS: Works[] = [
   {
     id: '01',
     title: '2262 VR',
@@ -53,28 +53,28 @@ const PROJECTS: Project[] = [
   },
 ];
 
-export default function Projects() {
+export default function Works() {
   return (
-    <section id="projects" className="min-h-screen pt-24 pb-12 w-full">
+    <section id="works" className="min-h-screen pt-24 pb-12 w-full">
       <FadeIn delay={0.1} direction="up">
         <h2 className="font-display text-[clamp(1.5rem,5vw,5rem)] text-silver1 flex items-baseline gap-[clamp(0.5rem,1.5vw,1rem)] leading-none">
           <span className="text-transparent [-webkit-text-stroke:1px_var(--color-blue)] sm:[-webkit-text-stroke:2px_var(--color-blue)] text-[clamp(1rem,4vw,3rem)] leading-none">
             #
           </span>
-          PROJECTS
+          WORKS
         </h2>
       </FadeIn>
 
       <div className="mt-12 sm:mt-16 border-t border-silver1/20 divide-y divide-silver1/20">
-        {PROJECTS.map((project, index) => {
-          const hasUrl = Boolean(project.url);
+        {WORKS.map((work, index) => {
+          const hasUrl = Boolean(work.url);
           const Component = hasUrl ? 'a' : 'div';
           
           return (
-            <FadeIn key={project.id} delay={0.2 + index * 0.15} direction="up">
+            <FadeIn key={work.id} delay={0.2 + index * 0.15} direction="up">
               <Component
                 {...(hasUrl ? {
-                  href: project.url,
+                  href: work.url,
                   target: '_blank',
                   rel: 'noopener noreferrer',
                 } : {})}
@@ -94,14 +94,14 @@ export default function Projects() {
                   <div className="flex items-center justify-between gap-4">
                     <div className="flex items-baseline gap-[clamp(0.75rem,2vw,1.5rem)]">
                       <span className="font-display text-pink text-[clamp(0.75rem,2.5vw,1.75rem)] tracking-widest leading-none">
-                        {project.id}
+                        {work.id}
                       </span>
                       <h3
                         className={`font-body font-bold text-[clamp(1rem,3.5vw,3.25rem)] text-silver1 tracking-wide leading-tight transition-colors ${
                           hasUrl ? 'group-hover:text-cyan' : ''
                         }`}
                       >
-                        {project.title}
+                        {work.title}
                       </h3>
                     </div>
 
@@ -113,7 +113,7 @@ export default function Projects() {
                             : 'text-gray border border-gray'
                         }`}
                       >
-                        {project.year}
+                        {work.year}
                       </span>
                       {hasUrl && (
                         <span className="font-body text-lg sm:text-2xl text-gray transition-transform duration-300 group-hover:translate-x-1 group-hover:-translate-y-1 group-hover:text-cyan">
@@ -124,7 +124,7 @@ export default function Projects() {
                   </div>
 
                   <p className="font-body text-gray text-sm sm:text-base leading-relaxed max-w-3xl">
-                    {project.description}
+                    {work.description}
                   </p>
                 </div>
               </Component>

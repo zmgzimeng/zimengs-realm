@@ -178,9 +178,9 @@ export default function Starfield() {
         params.speed = 6;
       }
 
-      const aboutSection = document.getElementById('about');
-      const targetOffset = aboutSection 
-        ? aboutSection.offsetTop 
+      const worksSection = document.getElementById('works');
+      const targetOffset = worksSection
+        ? worksSection.offsetTop
         : window.innerHeight;
 
       const rawOpacity = 1 - scrollY / targetOffset;
