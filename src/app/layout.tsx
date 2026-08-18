@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { myzar, ibmPlexMono, bilboSwashCaps } from "@/lib/fonts";
+import CustomScrollbar from "../components/CustomScrollbar";
 import "@/app/globals.css";
 
 export const metadata: Metadata = {
@@ -63,7 +64,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${myzar.variable} ${ibmPlexMono.variable} ${bilboSwashCaps.variable} h-full w-full overflow-x-hidden antialiased`}
+      className={`${myzar.variable} ${ibmPlexMono.variable} ${bilboSwashCaps.variable} antialiased`}
     >
       <head>
         <script
@@ -72,10 +73,10 @@ export default function RootLayout({
         />
       </head>
       <body 
-        className="min-h-full w-full overflow-x-hidden flex flex-col font-body bg-slate-950 text-slate-100"
+        className="font-body bg-slate-950 text-slate-100 min-h-screen"
         suppressHydrationWarning
       >
-        {children}
+        <CustomScrollbar>{children}</CustomScrollbar>
       </body>
     </html>
   );

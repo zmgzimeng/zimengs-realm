@@ -55,7 +55,7 @@ export default function Hero() {
           <div>
             <a
               href="#works"
-              className="inline-flex items-center gap-[clamp(0.3rem,1.5vw,0.75rem)] px-[clamp(1rem,3vw,1.5rem)] py-[clamp(0.5rem,1.5vw,0.75rem)] rounded-xl backdrop-blur-md bg-[var(--color-bg)]/40 border-2 border-pink/30 text-pink font-body text-[clamp(0.75rem,1.8vw,0.875rem)] tracking-wide hover:bg-[var(--color-bg)]/70 hover:border-pink/60 hover:text-cyan transition-all duration-300 group"
+              className="inline-flex items-center gap-[clamp(0.3rem,1.5vw,0.75rem)] px-[clamp(1rem,3vw,1.5rem)] py-[clamp(0.5rem,1.5vw,0.75rem)] rounded-lg backdrop-blur-md bg-[var(--color-bg)]/40 border-2 border-pink/40 text-pink font-body text-[clamp(0.75rem,1.8vw,0.875rem)] tracking-wide hover:bg-[var(--color-bg)]/70 hover:border-pink/60 hover:text-cyan transition-all duration-300 group"
             >
               // TAKE ME SOMEWHERE
               <span className="group-hover:translate-x-1 transition-transform">→</span>

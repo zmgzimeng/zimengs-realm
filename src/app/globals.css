@@ -19,16 +19,83 @@
 @media (prefers-color-scheme: dark) {
   :root {
     --background: #000216;
-    --foreground: #FFFFFF;
+    --foreground: #C2D1E0;
   }
 }
 
 html {
   scroll-behavior: smooth;
+  scrollbar-width: none;
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
   font-family: var(--font-ibm-plex-mono), sans-serif;
+}
+
+body::-webkit-scrollbar {
+  display: none;
+}
+
+::selection {
+  background-color: var(--color-pink);
+  color: var(--color-bg);
+  -webkit-text-fill-color: var(--color-bg);
+}
+
+::-moz-selection {
+  background-color: var(--color-pink);
+  color: var(--color-bg);
+  -webkit-text-fill-color: var(--color-bg);
+}
+
+/* Holy Custom Scrollbar */
+
+.os-theme-custom {
+  --os-size: 14px;
+  --os-padding-perpendicular: 0px;
+  --os-padding-axis: 0px;
+  --os-track-bg: transparent;
+  --os-handle-bg: var(--color-pink);
+  --os-handle-bg-hover: var(--color-pink);
+  --os-handle-bg-active: var(--color-pink);
+}
+
+.os-theme-custom.os-scrollbar {
+  transition: opacity 0.2s ease-out, visibility 0.2s ease-out;
+}
+
+.os-theme-custom .os-scrollbar-track {
+  background: transparent;
+  width: 100%;
+}
+
+.os-theme-custom.os-scrollbar-vertical {
+  width: 8px;
+  right: 2px;
+  transition: width 0.2s ease, right 0.2s ease, opacity 0.2s ease-out, visibility 0.2s ease-out;
+}
+
+.os-theme-custom.os-scrollbar-vertical:hover,
+.os-theme-custom.os-scrollbar-vertical.os-scrollbar-interaction {
+  width: 10px;
+  right: 2px;
+}
+
+.os-theme-custom .os-scrollbar-handle {
+  width: 100%;
+  min-height: 32px;
+  border-radius: 0;
+  background: 
+    linear-gradient(135deg, transparent 3px, var(--color-pink) 3px) top / 100% calc(50% + 1px) no-repeat,
+    linear-gradient(-45deg, transparent 3px, var(--color-pink) 3px) bottom / 100% calc(50% + 1px) no-repeat;
+  transition: background 0.2s ease;
+}
+
+.os-theme-custom .os-scrollbar-handle:hover,
+.os-theme-custom .os-scrollbar-handle.os-active {
+  background: 
+    linear-gradient(135deg, transparent 3px, var(--color-pink) 3px) top / 100% calc(50% + 1px) no-repeat,
+    linear-gradient(-45deg, transparent 3px, var(--color-pink) 3px) bottom / 100% calc(50% + 1px) no-repeat;
 }
