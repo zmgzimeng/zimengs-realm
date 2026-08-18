@@ -59,7 +59,8 @@ export default function About() {
       </FadeIn>
 
       <FadeIn delay={0.4} direction="up" className="mt-16 sm:mt-20 max-w-4xl">
-        <div className="space-y-8 font-body text-gray text-base sm:text-lg leading-relaxed">
+        {/* Updated text size to match project descriptions (text-sm sm:text-base) */}
+        <div className="space-y-8 font-body text-gray text-sm sm:text-base leading-relaxed">
           <p>
             I'm Zimeng—a developer and graphics hobbyist based in Massachusetts. I spend my time designing online and building web experiences.
           </p>

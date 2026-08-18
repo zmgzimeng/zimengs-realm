@@ -29,6 +29,14 @@ const PROJECTS: Project[] = [
   },
   {
     id: '03',
+    title: 'LET ME SEARCH THAT',
+    description:
+      'Satirical modernized recreation of LMGTFY to play a searching animation to send to those who are too lazy to search a question themselves.',
+    url: 'https://search.zimengsrealm.com/',
+    year: '2025',
+  },
+  {
+    id: '04',
     title: 'CANNON CURSOR',
     description:
       'Cursor-based game featuring simplistic graphics, selective difficulties, and unique cannon-shooting mechanics for a fun and challenging experience.',
@@ -36,7 +44,7 @@ const PROJECTS: Project[] = [
     year: '2024',
   },
   {
-    id: '04',
+    id: '05',
     title: 'INQUIRY PAD',
     description:
       'Interactive STEM learning platform integrating custom physical hardware with real-time software feedback engines for dynamic assignment assistance.',
@@ -83,7 +91,7 @@ export default function Projects() {
                 )}
 
                 <div className="relative z-10 flex flex-col gap-6">
-                  <div className="flex items-start justify-between gap-4">
+                  <div className="flex items-center justify-between gap-4">
                     <div className="flex items-baseline gap-[clamp(0.75rem,2vw,1.5rem)]">
                       <span className="font-display text-pink text-[clamp(0.75rem,2.5vw,1.75rem)] tracking-widest leading-none">
                         {project.id}
@@ -99,7 +107,7 @@ export default function Projects() {
 
                     <div className="flex items-center gap-3">
                       <span
-                        className={`font-body text-xs px-3 py-1 rounded-full uppercase tracking-widest ${
+                        className={`font-body text-[9px] sm:text-xs md:text-sm px-2 sm:px-3 md:px-4 py-0.5 sm:py-1 md:py-1.5 rounded-full uppercase tracking-widest ${
                           hasUrl
                             ? 'text-blue border border-blue'
                             : 'text-gray border border-gray'
