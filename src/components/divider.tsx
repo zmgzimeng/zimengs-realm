@@ -3,11 +3,10 @@
 import { motion, useScroll, useTransform, useSpring, useMotionValue, useMotionValueEvent } from 'framer-motion';
 
 interface ChevronProps {
-  speed?: number; // Distance translated per scroll increment
+  speed?: number;
   className?: string;
 }
 
-// Custom wrapping function for seamless looping
 function wrap(min: number, max: number, v: number) {
   const rangeSize = max - min;
   return ((((v - min) % rangeSize) + rangeSize) % rangeSize) + min;
@@ -19,23 +18,20 @@ export default function Chevron({
 }: ChevronProps) {
   const { scrollY } = useScroll();
 
-  // Smooth out raw scroll position
   const smoothScrollY = useSpring(scrollY, {
     stiffness: 100,
     damping: 30,
     restDelta: 0.001,
   });
 
-  // Calculate raw scroll displacement
-  const rawX = useTransform(smoothScrollY, [0, 2000], [0, speed]);
-  
-  // Wrapped percentage output for infinite loop between -50% and 0%
+  // Unclamped scroll transformation
+  const rawX = useTransform(smoothScrollY, (y) => (y / 2000) * speed);
   const xPercent = useMotionValue(-25);
 
   useMotionValueEvent(rawX, "change", (latest) => {
-    // Map scroll value into a smooth, wrapped -50% to 0% range
     const percentShift = (latest / 20) % 50; 
-    const wrapped = wrap(-50, 0, -percentShift);
+    // Positive shift translates the element rightward as scroll increases
+    const wrapped = wrap(-50, 0, percentShift - 25);
     xPercent.set(wrapped);
   });
 

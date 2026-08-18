@@ -7,7 +7,7 @@ const navLinks = [
   { name: 'About', href: '#about' },
   { name: 'Projects', href: '#projects' },
   { name: 'Affiliations', href: '#affiliations' },
-  { name: 'Contact', href: '#contact' },
+  { name: 'Contact', href: 'https://www.linkedin.com/in/zmgzimeng/', external: true },
 ];
 
 export default function Navbar() {
@@ -49,6 +49,8 @@ export default function Navbar() {
             <a
               key={link.name}
               href={link.href}
+              target={link.external ? '_blank' : undefined}
+              rel={link.external ? 'noopener noreferrer' : undefined}
               className="relative py-1 transition-colors duration-300 ease-out hover:text-cyan group"
             >
               {link.name}
