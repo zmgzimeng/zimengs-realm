@@ -1,11 +1,11 @@
-import Navbar from '@/components/navbar';
-import Hero from '@/components/hero';
-import About from '@/components/about';
-import Projects from '@/components/projects';
-import Affiliations from '@/components/affiliations';
-import GridOverlay from '@/components/gridOverlay';
-import Starfield from '@/components/starfield';
-import Divider from '@/components/divider';
+import Navbar from '@/components/Navbar';
+import Hero from '@/components/Hero';
+import About from '@/components/About';
+import Projects from '@/components/Projects';
+import Affiliations from '@/components/Affiliations';
+import GridOverlay from '@/components/GridOverlay';
+import Starfield from '@/components/Starfield';
+import Divider from '@/components/Divider';
 
 export default function Home() {
   return (

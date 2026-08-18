@@ -1,7 +1,7 @@
 'use client';
 
 import Image from 'next/image';
-import FadeIn from '@/components/fadeIn';
+import FadeIn from '@/components/FadeIn';
 
 export default function Affiliations() {
   return (

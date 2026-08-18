@@ -1,6 +1,6 @@
 'use client';
 
-import FadeIn from '@/components/fadeIn';
+import FadeIn from '@/components/FadeIn';
 
 interface Project {
   id: string;
@@ -29,10 +29,10 @@ const PROJECTS: Project[] = [
   },
   {
     id: '03',
-    title: 'LET ME SEARCH THAT',
+    title: 'BRETTON WOODS & THE DOLLAR',
     description:
-      'Satirical modernized recreation of LMGTFY that plays a searching animation to send to those who are too lazy to search a question themselves.',
-    url: 'https://search.zimengsrealm.com/',
+      'Interactive historical web analysis detailing post-war monetary policy, central banking evolution, and global currency dynamics.',
+    url: 'https://brettonwoods.zimengsrealm.com/',
     year: '2025',
   },
   {
@@ -57,7 +57,7 @@ export default function Projects() {
   return (
     <section id="projects" className="min-h-screen pt-24 pb-12 w-full">
       <FadeIn delay={0.1} direction="up">
-        <h2 className="font-display text-[clamp(1.5rem,5vw,5rem)] text-white flex items-baseline gap-[clamp(0.5rem,1.5vw,1rem)] leading-none">
+        <h2 className="font-display text-[clamp(1.5rem,5vw,5rem)] text-silver1 flex items-baseline gap-[clamp(0.5rem,1.5vw,1rem)] leading-none">
           <span className="text-transparent [-webkit-text-stroke:1px_var(--color-blue)] sm:[-webkit-text-stroke:2px_var(--color-blue)] text-[clamp(1rem,4vw,3rem)] leading-none">
             #
           </span>
@@ -65,7 +65,7 @@ export default function Projects() {
         </h2>
       </FadeIn>
 
-      <div className="mt-12 sm:mt-16 border-t border-white/20 divide-y divide-white/20">
+      <div className="mt-12 sm:mt-16 border-t border-silver1/20 divide-y divide-silver1/20">
         {PROJECTS.map((project, index) => {
           const hasUrl = Boolean(project.url);
           const Component = hasUrl ? 'a' : 'div';
@@ -97,7 +97,7 @@ export default function Projects() {
                         {project.id}
                       </span>
                       <h3
-                        className={`font-body font-bold text-[clamp(1rem,3.5vw,3.25rem)] text-white tracking-wide leading-tight transition-colors ${
+                        className={`font-body font-bold text-[clamp(1rem,3.5vw,3.25rem)] text-silver1 tracking-wide leading-tight transition-colors ${
                           hasUrl ? 'group-hover:text-cyan' : ''
                         }`}
                       >

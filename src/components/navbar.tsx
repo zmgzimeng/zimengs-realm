@@ -44,7 +44,7 @@ export default function Navbar() {
           />
         </a>
 
-        <nav className="flex items-center gap-4 md:gap-8 font-body text-xs tracking-wider uppercase text-[var(--color-silver1)]">
+        <nav className="flex items-center gap-4 md:gap-8 font-body text-xs tracking-wider uppercase text-silver1">
           {navLinks.map((link) => (
             <a
               key={link.name}
@@ -59,7 +59,7 @@ export default function Navbar() {
           ))}
         </nav>
 
-        <div className="hidden lg:flex items-center gap-2.5 font-body text-xs text-silver2">
+        <div className="hidden lg:flex items-center gap-2.5 font-body text-xs text-gray">
           <span className="relative flex h-2 w-2">
             <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
             <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>

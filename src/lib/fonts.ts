@@ -5,7 +5,7 @@ import { Bilbo_Swash_Caps } from 'next/font/google';
 export const myzar = localFont({
   src: [
     {
-      path: '../../../public/fonts/myzar.woff2',
+      path: '../../public/fonts/myzar.woff2',
       weight: 'normal',
       style: 'normal',
     },

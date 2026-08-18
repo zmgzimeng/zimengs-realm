@@ -1,7 +1,7 @@
 'use client';
 
 import { motion, useScroll, useTransform, useSpring } from 'framer-motion';
-import FadeIn from '@/components/fadeIn';
+import FadeIn from '@/components/FadeIn';
 
 export default function Hero() {
   const { scrollY } = useScroll();
@@ -43,7 +43,7 @@ export default function Hero() {
         </FadeIn>
 
         <FadeIn delay={0.35} direction="up">
-            <h1 className="font-display text-[clamp(2rem,8vw,8rem)] tracking-normal sm:tracking-wider text-white leading-none">
+            <h1 className="font-display text-[clamp(2rem,8vw,8rem)] tracking-normal sm:tracking-wider text-silver1 leading-none">
                 ZIMENG'S
             </h1>
             <h1 className="font-display text-[clamp(2rem,8vw,8rem)] tracking-normal sm:tracking-wider text-transparent [-webkit-text-stroke:1px_#5A79B3] sm:[-webkit-text-stroke:2px_#5A79B3] leading-none mt-2">
