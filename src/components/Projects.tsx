@@ -29,10 +29,10 @@ const PROJECTS: Project[] = [
   },
   {
     id: '03',
-    title: 'BRETTON WOODS & THE DOLLAR',
+    title: 'LET ME SEARCH THAT',
     description:
-      'Interactive historical web analysis detailing post-war monetary policy, central banking evolution, and global currency dynamics.',
-    url: 'https://brettonwoods.zimengsrealm.com/',
+      'Satirical modernized recreation of LMGTFY that plays a searching animation to send to those who are too lazy to search a question themselves.',
+    url: 'https://search.zimengsrealm.com/',
     year: '2025',
   },
   {
