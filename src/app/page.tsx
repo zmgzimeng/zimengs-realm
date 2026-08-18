@@ -1,7 +1,9 @@
 import Navbar from '@/components/navbar';
 import Hero from '@/components/hero';
+import About from '@/components/about';
 import GridOverlay from '@/components/gridOverlay';
 import Starfield from '@/components/starfield';
+import Divider from '@/components/divider';
 
 export default function Home() {
   return (
@@ -14,10 +16,12 @@ export default function Home() {
       <main className="relative z-10 max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
         <Hero />
         
+        <Divider className="my-8" />
+
         {/* About Section */}
-        <section id="about" className="min-h-screen pt-24 pb-12">
-          <h2 className="font-display text-4xl"># ABOUT - COMING SOON</h2>
-        </section>
+        <About />
+
+        <Divider className="my-8" />
 
         {/* Projects Section */}
         <section id="projects" className="min-h-screen pt-24 pb-12">

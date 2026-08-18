@@ -24,7 +24,7 @@ export default function Hero() {
       <div className="max-w-4xl z-10 w-full">
 
         <FadeIn delay={0.1} direction="down">
-          <p className="font-body text-[10px] sm:text-xs tracking-widest text-silver2 uppercase mb-10">
+          <p className="font-body text-[10px] sm:text-sm tracking-widest text-gray uppercase mb-10">
             ZIMENG ZHANG &nbsp;•&nbsp; MASSACHUSETTS USA &nbsp;•&nbsp; CLASS OF 2027
           </p>
         </FadeIn>
@@ -43,19 +43,19 @@ export default function Hero() {
         </FadeIn>
 
         <FadeIn delay={0.35} direction="up">
-          <h1 className="font-display text-[clamp(2rem,8vw,8rem)] tracking-normal sm:tracking-wider text-white leading-none">
-            ZIMENG'S
-          </h1>
-          <h1 className="font-display text-[clamp(2rem,8vw,8rem)] tracking-normal sm:tracking-wider text-transparent [-webkit-text-stroke:2px_#5A79B3] leading-none mt-2">
-            REALM
-          </h1>
+            <h1 className="font-display text-[clamp(2rem,8vw,8rem)] tracking-normal sm:tracking-wider text-white leading-none">
+                ZIMENG'S
+            </h1>
+            <h1 className="font-display text-[clamp(2rem,8vw,8rem)] tracking-normal sm:tracking-wider text-transparent [-webkit-text-stroke:1px_#5A79B3] sm:[-webkit-text-stroke:2px_#5A79B3] leading-none mt-2">
+                REALM
+            </h1>
         </FadeIn>
 
         <FadeIn delay={0.5} direction="up" className="mt-12 sm:mt-20">
           <div>
             <a
               href="#projects"
-              className="inline-flex items-center gap-[clamp(0.5rem,1.5vw,0.75rem)] px-[clamp(1rem,3vw,1.5rem)] py-[clamp(0.5rem,1.5vw,0.75rem)] rounded-xl backdrop-blur-md bg-[var(--color-bg)]/40 border-2 border-pink/30 text-pink font-body text-[clamp(0.75rem,1.8vw,0.875rem)] tracking-wide hover:bg-[var(--color-bg)]/70 hover:border-pink/60 hover:text-cyan transition-all duration-300 group"
+              className="inline-flex items-center gap-[clamp(0.3rem,1.5vw,0.75rem)] px-[clamp(1rem,3vw,1.5rem)] py-[clamp(0.5rem,1.5vw,0.75rem)] rounded-xl backdrop-blur-md bg-[var(--color-bg)]/40 border-2 border-pink/30 text-pink font-body text-[clamp(0.75rem,1.8vw,0.875rem)] tracking-wide hover:bg-[var(--color-bg)]/70 hover:border-pink/60 hover:text-cyan transition-all duration-300 group"
             >
               // TAKE ME SOMEWHERE
               <span className="group-hover:translate-x-1 transition-transform">→</span>

@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { myzar, jetbrainsMono } from "@/app/ui/fonts";
+import { myzar, ibmPlexMono, bilboSwashCaps } from "@/app/ui/fonts";
 import '@/app/ui/globals.css';
 
 export const metadata: Metadata = {
@@ -51,7 +51,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${myzar.variable} ${jetbrainsMono.variable} h-full w-full overflow-x-hidden antialiased`}
+      className={`${myzar.variable} ${ibmPlexMono.variable} ${bilboSwashCaps.variable} h-full w-full overflow-x-hidden antialiased`}
     >
       <head>
         <script
