@@ -1,6 +1,7 @@
 import Navbar from '@/components/navbar';
 import Hero from '@/components/hero';
 import About from '@/components/about';
+import Projects from '@/components/projects';
 import GridOverlay from '@/components/gridOverlay';
 import Starfield from '@/components/starfield';
 import Divider from '@/components/divider';
@@ -24,9 +25,7 @@ export default function Home() {
         <Divider className="my-8" />
 
         {/* Projects Section */}
-        <section id="projects" className="min-h-screen pt-24 pb-12">
-          <h2 className="font-display text-4xl"># SELECTED WORKS - COMING SOON</h2>
-        </section>
+        <Projects />
       </main>
     </div>
   );
