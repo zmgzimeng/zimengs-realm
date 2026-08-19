@@ -43,22 +43,33 @@ export default function Hero() {
         </FadeIn>
 
         <FadeIn delay={0.35} direction="up">
-            <h1 className="font-display text-[clamp(2rem,8vw,8rem)] tracking-normal sm:tracking-wider text-silver1 leading-none">
-                ZIMENG'S
-            </h1>
-            <h1 className="font-display text-[clamp(2rem,8vw,8rem)] tracking-normal sm:tracking-wider text-transparent [-webkit-text-stroke:1px_#5A79B3] sm:[-webkit-text-stroke:2px_#5A79B3] leading-none mt-2">
-                REALM
-            </h1>
+          <h1 className="font-display text-[clamp(2rem,8vw,8rem)] tracking-normal sm:tracking-wider text-silver1 leading-none">
+            ZIMENG'S
+          </h1>
+          <h1 className="font-display text-[clamp(2rem,8vw,8rem)] tracking-normal sm:tracking-wider text-transparent [-webkit-text-stroke:1px_#5A79B3] sm:[-webkit-text-stroke:2px_#5A79B3] leading-none mt-2">
+            REALM
+          </h1>
         </FadeIn>
 
         <FadeIn delay={0.5} direction="up" className="mt-12 sm:mt-20">
           <div>
             <a
               href="#works"
-              className="inline-flex items-center gap-[clamp(0.3rem,1.5vw,0.75rem)] px-[clamp(1rem,3vw,1.5rem)] py-[clamp(0.5rem,1.5vw,0.75rem)] rounded-lg backdrop-blur-md bg-[var(--color-bg)]/40 border-2 border-pink/40 text-pink font-body text-[clamp(0.75rem,1.8vw,0.875rem)] tracking-wide hover:bg-[var(--color-bg)]/70 hover:border-pink/60 hover:text-cyan transition-all duration-300 group"
+              className="inline-flex items-center gap-[clamp(0.3rem,1.5vw,0.75rem)] px-[clamp(1rem,3vw,1.5rem)] py-[clamp(0.5rem,1.5vw,0.75rem)] rounded-lg backdrop-blur-md bg-[var(--color-bg)]/40 border-3 border-pink/40 text-pink font-body font-bold text-[clamp(0.75rem,1.8vw,0.875rem)] tracking-wide hover:bg-[var(--color-bg)]/70 hover:border-pink/60 hover:text-cyan transition-all duration-300 group"
             >
-              // TAKE ME SOMEWHERE
-              <span className="group-hover:translate-x-1 transition-transform">→</span>
+              TAKE ME SOMEWHERE
+              <span className="relative inline-block h-4 w-4 overflow-hidden group-hover:translate-x-1 transition-transform duration-300">
+                <img 
+                  src="/accents/element6.svg"
+                  alt="Chevron"
+                  className="h-full w-full object-contain group-hover:opacity-0 transition-opacity duration-300 absolute inset-0"
+                />
+                <img 
+                  src="/accents/element7.svg"
+                  alt="Chevron"
+                  className="h-full w-full object-contain opacity-0 group-hover:opacity-100 transition-opacity duration-300 absolute inset-0"
+                />
+              </span>
             </a>
           </div>
         </FadeIn>
@@ -75,7 +86,7 @@ export default function Hero() {
       >
         <motion.img
           src="/myzar.svg"
-          alt=""
+          alt="Myzar"
           initial={{ opacity: 0, rotate: 0 }}
           animate={{ 
             opacity: 0.2,

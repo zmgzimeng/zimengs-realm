@@ -116,8 +116,17 @@ export default function Works() {
                         {work.year}
                       </span>
                       {hasUrl && (
-                        <span className="font-body text-lg sm:text-2xl text-gray transition-transform duration-300 group-hover:translate-x-1 group-hover:-translate-y-1 group-hover:text-cyan">
-                          ↗
+                        <span className="relative inline-block h-4 w-4 sm:h-5 sm:w-5 overflow-hidden group-hover:translate-x-2 transition-transform duration-300">
+                          <img
+                            src="/accents/element5.svg"
+                            alt="Chevron"
+                            className="h-full w-full object-contain group-hover:opacity-0 transition-opacity duration-300 absolute inset-0"
+                          />
+                          <img
+                            src="/accents/element7.svg"
+                            alt="Chevron"
+                            className="h-full w-full object-contain opacity-0 group-hover:opacity-100 transition-opacity duration-300 absolute inset-0"
+                          />
                         </span>
                       )}
                     </div>
