@@ -121,8 +121,13 @@ export default function Footer() {
 
       <div 
         style={{ backgroundColor: iceWhite }}
-        className="relative z-20 w-full -mt-2 pt-2 border-none outline-none"
+        className="relative z-20 w-full -mt-2 pt-2 border-none outline-none pb-[env(safe-area-inset-bottom)]"
       >
+        <div 
+          className="absolute top-full left-0 right-0 h-[50vh] pointer-events-none"
+          style={{ backgroundColor: iceWhite }}
+        />
+
         <div 
           className="absolute -top-6 left-0 right-0 h-6 pointer-events-none z-10"
           style={{
@@ -132,13 +137,13 @@ export default function Footer() {
 
         <div 
           style={{ color: textColor }}
-          className="relative z-40 w-[92%] mx-auto py-6 flex flex-col sm:flex-row items-center justify-between gap-4 font-body text-xs tracking-wider uppercase"
+          className="relative z-40 w-[92%] mx-auto py-6 flex flex-col lg:flex-row items-center justify-between gap-4 font-body text-xs tracking-wider"
         >
-          <p>
+          <p className="text-center lg:text-left">
             © {new Date().getFullYear()} Zimeng's Realm
           </p>
 
-          <p className="text-right normal-case tracking-normal sm:text-xs text-[11px] opacity-90">
+          <p className="text-center lg:text-right normal-case tracking-normal sm:text-xs text-[11px] opacity-90">
             Built with Next.js, Tailwind CSS, and Framer Motion. <span className="inline-block">MYZAR is a custom typeface designed by Zimeng.</span>
           </p>
         </div>

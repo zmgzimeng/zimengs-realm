@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import type { Viewport } from "next";
 import { myzar, ibmPlexMono, bilboSwashCaps } from "@/lib/fonts";
 import CustomScrollbar from "../components/CustomScrollbar";
 import "@/app/globals.css";
@@ -22,6 +23,12 @@ export const metadata: Metadata = {
     siteName: "Zimeng's Realm",
     type: "website",
   },
+};
+
+export const viewport: Viewport = {
+  width: 'device-width',
+  initialScale: 1,
+  viewportFit: 'cover',
 };
 
 export default function RootLayout({
