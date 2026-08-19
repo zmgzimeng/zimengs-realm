@@ -2,6 +2,7 @@
 
 import { motion, useScroll, useTransform, useSpring } from 'framer-motion';
 import FadeIn from '@/components/FadeIn';
+import { WORKS } from '@/lib/works';
 
 export default function Hero() {
   const { scrollY } = useScroll();
@@ -15,6 +16,23 @@ export default function Hero() {
   const yParallax = useTransform(smoothScrollY, [0, 1000], [0, -400]);
   const extraRotation = useTransform(smoothScrollY, [0, 1000], [0, 40]);
   const scrollOpacity = useTransform(smoothScrollY, [0, 600], [1, 0]);
+
+  const handleTakeMeSomewhere = () => {
+    // 1. Smoothly scroll down to the works section in the current tab
+    const worksSection = document.getElementById('works');
+    if (worksSection) {
+      worksSection.scrollIntoView({ behavior: 'smooth' });
+    }
+
+    // 2. Filter and open a random project in a new tab
+    const validWorks = WORKS.filter((work) => Boolean(work.url));
+    if (validWorks.length === 0) return;
+
+    const randomIndex = Math.floor(Math.random() * validWorks.length);
+    const randomProject = validWorks[randomIndex];
+
+    window.open(randomProject.url, '_blank', 'noopener,noreferrer');
+  };
 
   return (
     <section 
@@ -53,9 +71,10 @@ export default function Hero() {
 
         <FadeIn delay={0.5} direction="up" className="mt-12 sm:mt-20">
           <div>
-            <a
-              href="#works"
-              className="inline-flex items-center gap-[clamp(0.3rem,1.5vw,0.75rem)] px-[clamp(1rem,3vw,1.5rem)] py-[clamp(0.5rem,1.5vw,0.75rem)] rounded-lg backdrop-blur-md bg-[var(--color-bg)]/40 border-3 border-pink/40 text-pink font-body font-bold text-[clamp(0.75rem,1.8vw,0.875rem)] tracking-wide hover:bg-[var(--color-bg)]/70 hover:border-pink/60 hover:text-cyan transition-all duration-300 group"
+            <button
+              type="button"
+              onClick={handleTakeMeSomewhere}
+              className="inline-flex items-center gap-[clamp(0.3rem,1.5vw,0.75rem)] px-[clamp(1rem,3vw,1.5rem)] py-[clamp(0.5rem,1.5vw,0.75rem)] rounded-lg backdrop-blur-md bg-[var(--color-bg)]/40 border-3 border-pink/40 text-pink font-body font-bold text-[clamp(0.75rem,1.8vw,0.875rem)] tracking-wide hover:bg-[var(--color-bg)]/70 hover:border-pink/60 hover:text-cyan transition-all duration-300 group cursor-pointer"
             >
               TAKE ME SOMEWHERE
               <span className="relative inline-block h-4 w-4 overflow-hidden group-hover:translate-x-1 transition-transform duration-300">
@@ -70,7 +89,7 @@ export default function Hero() {
                   className="h-full w-full object-contain opacity-0 group-hover:opacity-100 transition-opacity duration-300 absolute inset-0"
                 />
               </span>
-            </a>
+            </button>
           </div>
         </FadeIn>
 
