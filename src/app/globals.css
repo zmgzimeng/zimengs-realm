@@ -14,6 +14,7 @@
 
   --color-silver1: #C2D1E0;
   --color-silver2: #525D6B;
+  --color-silver-ice: #EFF3F7;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -121,3 +122,6 @@ body::-webkit-scrollbar {
       linear-gradient(-45deg, transparent 3px, var(--color-pink) 3px) bottom / 100% calc(50% + 1px) no-repeat;
   }
 }
+
+/* Clouds */
+

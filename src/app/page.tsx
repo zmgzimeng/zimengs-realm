@@ -3,6 +3,7 @@ import Hero from '@/components/Hero';
 import Works from '@/components/Works';
 import About from '@/components/About';
 import Affiliations from '@/components/Affiliations';
+import Footer from '@/components/Footer';
 import GridOverlay from '@/components/GridOverlay';
 import Starfield from '@/components/Starfield';
 import Divider from '@/components/Divider';
@@ -26,6 +27,7 @@ export default function Home() {
         <Divider className="my-8" />
 
         <Affiliations />
+        <Footer />
       </main>
     </div>
   );
