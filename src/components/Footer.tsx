@@ -50,7 +50,7 @@ export default function Footer() {
       ref={containerRef}
       className="relative w-screen left-1/2 right-1/2 -ml-[50vw] -mr-[50vw] overflow-hidden pt-8 group"
     >
-      <div className="absolute top-0 left-0 right-0 h-40 bg-gradient-to-b from-transparent via-[#2d1b4e]/30 to-transparent pointer-events-none" />
+      <div className="absolute inset-x-0 top-0 bottom-[100px] bg-gradient-to-b from-transparent via-[#2d1b4e]/30 to-[#6b468a]/40 pointer-events-none" />
 
       <div className="relative w-full min-h-[140px] flex flex-col justify-end select-none overflow-hidden">
         
@@ -144,7 +144,7 @@ export default function Footer() {
           </p>
 
           <p className="text-center lg:text-right normal-case tracking-normal sm:text-xs text-[11px] opacity-90">
-            Built with Next.js, Tailwind CSS, and Framer Motion. <span className="inline-block">MYZAR is a custom typeface designed by Zimeng.</span>
+            Built with Next.js + Tailwind CSS + Framer Motion. <span className="inline-block">Myzar is a custom typeface designed by Zimeng.</span>
           </p>
         </div>
       </div>

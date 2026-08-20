@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import type { Viewport } from "next";
 import { myzar, ibmPlexMono, bilboSwashCaps } from "@/lib/fonts";
 import CustomScrollbar from "../components/CustomScrollbar";
+import ScrollReset from "@/components/ScrollReset";
 import "@/app/globals.css";
 
 export const metadata: Metadata = {
@@ -83,6 +84,7 @@ export default function RootLayout({
         className="font-body bg-slate-950 text-slate-100 min-h-screen"
         suppressHydrationWarning
       >
+        <ScrollReset />
         <CustomScrollbar>{children}</CustomScrollbar>
       </body>
     </html>
