@@ -16,7 +16,7 @@ export const TEAMS: Team[] = [
     subtitle: 'FIRST ROBOTICS COMPETITION TEAM 2262',
     description:
       'Competitive high school robotics team designing, constructing, and programming autonomous and driver-controlled robots for the annual FIRST Robotics Competition.',
-    url: 'https://team2262.zimengsrealm.com/',
+    url: 'https://team2262.zimengsrealm.com',
     year: '2024 - Present',
   },
   {
@@ -26,7 +26,7 @@ export const TEAMS: Team[] = [
     subtitle: 'MASSACHUSETTS STATE REFEREE COMMITTEE',
     description:
       'BAYS certified referee enforcing match laws across local travel games. Managing high-intensity matches, making real-time decisions, and resolving conflict on the field.',
-    url: 'https://massref.net/',
+    url: 'https://massref.net',
     year: '2022 - Present',
   },
 ];

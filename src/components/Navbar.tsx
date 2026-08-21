@@ -7,7 +7,7 @@ const navLinks = [
   { name: 'Works', href: '#works' },
   { name: 'Teams', href: '#teams' },
   { name: 'About', href: '#about' },
-  { name: 'Contact', href: 'https://www.linkedin.com/in/zmgzimeng/', external: true },
+  { name: 'Contact', href: '#contact' },
 ];
 
 function NavLink({ link }: { link: (typeof navLinks)[number] }) {
@@ -49,8 +49,6 @@ function NavLink({ link }: { link: (typeof navLinks)[number] }) {
       <motion.a
         ref={ref}
         href={link.href}
-        target={link.external ? '_blank' : undefined}
-        rel={link.external ? 'noopener noreferrer' : undefined}
         onMouseEnter={handleMouseEnter}
         onMouseMove={handleMouseMove}
         onMouseLeave={handleMouseLeave}

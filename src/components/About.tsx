@@ -85,7 +85,7 @@ export default function About() {
   };
 
   return (
-    <section id="about" className="min-h-screen pt-20 pb-12 w-full">
+    <section id="about" className="pt-20 pb-36 w-full">
       <motion.h2 
         variants={cascadeContainerVariants}
         initial="hidden"
