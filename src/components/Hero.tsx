@@ -208,7 +208,7 @@ export default function Hero() {
               onMouseEnter={handleBtnMouseEnter}
               onMouseMove={handleBtnMouseMove}
               onMouseLeave={handleBtnMouseLeave}
-              className="inline-flex items-center gap-[clamp(0.3rem,1.5vw,0.75rem)] px-[clamp(1rem,3vw,1.5rem)] py-[clamp(0.5rem,1.5vw,0.75rem)] rounded-lg backdrop-blur-md bg-[var(--color-bg)]/40 border sm:border-2 border-[var(--color-pink)]/50 text-[var(--color-pink)] font-body font-bold text-[clamp(0.75rem,1.8vw,0.875rem)] tracking-wide hover:bg-[var(--color-bg)]/70 hover:border-[var(--color-pink)] hover:text-[var(--color-cyan)] transition-all duration-300 group cursor-pointer"
+              className="inline-flex items-center gap-[clamp(0.3rem,1.5vw,0.75rem)] px-[clamp(1rem,3vw,1.5rem)] py-[clamp(0.5rem,1.5vw,0.75rem)] rounded-lg backdrop-blur-md bg-[var(--color-bg)]/40 border-2 sm:border-[3px] border-[var(--color-pink)]/50 text-[var(--color-pink)] font-body font-bold text-[clamp(0.75rem,1.8vw,0.875rem)] tracking-wide hover:bg-[var(--color-bg)]/70 hover:border-[var(--color-pink)] hover:text-[var(--color-cyan)] transition-all duration-300 group cursor-pointer"
             >
               <motion.span
                 ref={btnTextRef}
