@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useRef, MouseEvent } from 'react';
+import { useState, useRef, MouseEvent, useEffect } from 'react';
 import { motion, useSpring, useMotionValue, useAnimationControls, Variants } from 'framer-motion';
 import FadeIn from '@/components/FadeIn';
 
@@ -44,6 +44,11 @@ const SOCIAL_LINKS = [
 function MagneticSocialIcon({ href, unhovered, hovered, label }: { href: string; unhovered: string; hovered: string; label: string }) {
   const ref = useRef<HTMLAnchorElement>(null);
   const [isHovered, setIsHovered] = useState(false);
+
+  useEffect(() => {
+    const img = new Image();
+    img.src = hovered;
+  }, [hovered]);
 
   const mouseX = useMotionValue(0);
   const mouseY = useMotionValue(0);
@@ -103,14 +108,14 @@ function MagneticSocialIcon({ href, unhovered, hovered, label }: { href: string;
           <img
             src={unhovered}
             alt={label}
-            className={`absolute inset-0 w-full h-full object-contain transition-opacity duration-300 ${
+            className={`absolute inset-0 w-full h-full object-contain transition-opacity duration-300 ease-out ${
               isHovered ? 'opacity-0' : 'opacity-100'
             }`}
           />
           <img
             src={hovered}
             alt={`${label} hovered`}
-            className={`absolute inset-0 w-full h-full object-contain transition-opacity duration-300 ${
+            className={`absolute inset-0 w-full h-full object-contain transition-opacity duration-300 ease-out ${
               isHovered ? 'opacity-100' : 'opacity-0'
             }`}
           />
@@ -240,7 +245,7 @@ export default function Contact() {
               whileInView="visible"
               viewport={{ once: true }}
               custom={0.25}
-              className="font-display text-[clamp(3.2rem,8vw,6.5rem)] lg:text-[6.5rem] text-transparent [-webkit-text-stroke:1px_#5A79B3] sm:[-webkit-text-stroke:2px_#5A79B3] leading-none flex items-baseline overflow-visible select-none"
+              className="font-display text-[clamp(2rem,8vw,6.5rem)] text-transparent [-webkit-text-stroke:1px_#5A79B3] sm:[-webkit-text-stroke:2px_#5A79B3] leading-none flex items-baseline overflow-visible select-none"
             >
               <span className="inline-flex overflow-visible [clip-path:inset(-200px_-200px_0px_-200px)]">
                 {sayHiChars.map((char, index) => (
@@ -305,7 +310,7 @@ export default function Contact() {
                     ? `inset(0 ${clipRight}% 0 0)` 
                     : `inset(0 0 0 ${Math.abs(clipRight)}%)`,
                 }}
-                className="absolute inset-0 font-display text-[clamp(3.2rem,8vw,6.5rem)] lg:text-[6.5rem] text-[var(--color-blue)] [-webkit-text-fill-color:var(--color-blue)] leading-none flex items-baseline select-none"
+                className="absolute inset-0 font-display text-[clamp(2rem,8vw,6.5rem)] text-[var(--color-blue)] [-webkit-text-fill-color:var(--color-blue)] leading-none flex items-baseline select-none"
               >
                 <span className="inline-flex overflow-visible [clip-path:inset(-200px_-200px_0px_-200px)]">
                   {sayHiChars.map((char, index) => (

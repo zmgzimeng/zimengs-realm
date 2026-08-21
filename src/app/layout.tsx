@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import type { Viewport } from "next";
 import { myzar, ibmPlexMono, bilboSwashCaps } from "@/lib/fonts";
+import CustomCursor from "@/components/CustomCursor";
 import CustomScrollbar from "../components/CustomScrollbar";
 import ScrollReset from "@/components/ScrollReset";
 import "@/app/globals.css";
@@ -73,6 +74,7 @@ export default function RootLayout({
     <html
       lang="en"
       className={`${myzar.variable} ${ibmPlexMono.variable} ${bilboSwashCaps.variable} antialiased`}
+      suppressHydrationWarning
     >
       <head>
         <script
@@ -84,6 +86,7 @@ export default function RootLayout({
         className="font-body bg-slate-950 text-slate-100 min-h-screen"
         suppressHydrationWarning
       >
+        <CustomCursor />
         <ScrollReset />
         <CustomScrollbar>{children}</CustomScrollbar>
       </body>

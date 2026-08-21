@@ -92,7 +92,7 @@ export default function About() {
         whileInView="visible"
         viewport={{ once: true, amount: 0.6, margin: "0px 0px -80px 0px" }}
         custom={0.1}
-        className="font-display text-[clamp(1.5rem,5vw,5rem)] text-silver1 flex items-baseline gap-[clamp(0.5rem,1.5vw,1rem)] leading-none overflow-visible"
+        className="font-display text-[clamp(2rem,5vw,5rem)] text-silver1 flex items-baseline gap-[clamp(0.5rem,1.5vw,1rem)] leading-none overflow-visible"
       >
         <motion.span 
           variants={hashtagVariants}

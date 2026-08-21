@@ -9,13 +9,13 @@ export default function Footer() {
   const mouseX = useMotionValue(0);
   const mouseY = useMotionValue(0);
 
-  const springConfig = { damping: 20, stiffness: 220, mass: 0.35 };
+  const springConfig = { damping: 20, stiffness: 120, mass: 2 };
   const smoothX = useSpring(mouseX, springConfig);
   const smoothY = useSpring(mouseY, springConfig);
 
-  const layer1X = useTransform(smoothX, [-0.5, 0.5], [-10, 10]);
-  const layer2X = useTransform(smoothX, [-0.5, 0.5], [-18, 18]);
-  const layer3X = useTransform(smoothX, [-0.5, 0.5], [-24, 24]);
+  const layer1X = useTransform(smoothX, [-0.5, 0.5], [-20, 20]);
+  const layer2X = useTransform(smoothX, [-0.5, 0.5], [-35, 35]);
+  const layer3X = useTransform(smoothX, [-0.5, 0.5], [-50, 50]);
 
   const layer1Y = useTransform(smoothY, [-0.5, 0.5], [-2, 1]);
   const layer2Y = useTransform(smoothY, [-0.5, 0.5], [-4, 2]);
@@ -144,7 +144,7 @@ export default function Footer() {
           </p>
 
           <p className="text-center lg:text-right normal-case tracking-normal sm:text-xs text-[11px] opacity-90">
-            Built with Next.js + Tailwind CSS + Framer Motion. <span className="inline-block">Myzar is a custom typeface designed by Zimeng.</span>
+            Built with Next.js + Tailwind CSS + Motion. <span className="inline-block">Myzar is a custom typeface designed by Zimeng.</span>
           </p>
         </div>
       </div>

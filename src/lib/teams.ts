@@ -15,9 +15,9 @@ export const TEAMS: Team[] = [
     title: 'HOLLISTON ROBOPANTHERS',
     subtitle: 'FIRST ROBOTICS COMPETITION TEAM 2262',
     description:
-      'Competitive high school robotics team designing, constructing, and programming autonomous and driver-controlled robots for the annual FIRST Robotics Competition.',
+      'Captain of competitive high school robotics team designing, constructing, and programming autonomous and driver-controlled robots for the annual FIRST Robotics Competition.',
     url: 'https://team2262.zimengsrealm.com',
-    year: '2024 - Present',
+    year: '2024 – Present',
   },
   {
     id: '02',
@@ -27,6 +27,6 @@ export const TEAMS: Team[] = [
     description:
       'BAYS certified referee enforcing match laws across local travel games. Managing high-intensity matches, making real-time decisions, and resolving conflict on the field.',
     url: 'https://massref.net',
-    year: '2022 - Present',
+    year: '2022 – Present',
   },
 ];

@@ -95,6 +95,7 @@ export default function Hero() {
     const worksSection = document.getElementById('works');
     if (worksSection) {
       worksSection.scrollIntoView({ behavior: 'smooth' });
+      window.history.pushState(null, '', '#works');
     }
 
     const validWorks = WORKS.filter((work) => Boolean(work.url));
