@@ -123,7 +123,7 @@ export default function About() {
             onMouseEnter={handleImgMouseEnter}
             onMouseMove={handleImgMouseMove}
             onMouseLeave={handleImgMouseLeave}
-            className="relative md:col-span-5 w-full aspect-[16/9] group cursor-pointer"
+            className="relative md:col-span-5 w-full aspect-[16/9] group cursor-none"
           >
             <div className="absolute inset-0 border border-pink translate-x-4 translate-y-4 group-hover:translate-x-2 group-hover:translate-y-2 transition-transform duration-500 ease-out pointer-events-none z-0" />
 

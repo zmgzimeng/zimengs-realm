@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
 import { motion, useMotionValue, useSpring, useTransform } from "framer-motion";
 
 export default function CustomCursor() {
@@ -22,7 +22,10 @@ export default function CustomCursor() {
   const bottomOffset = useTransform(smoothDelta, [-150, 0, 150], [24, 3, 3]);
   const dotHeight = useTransform(
     [topOffset, bottomOffset],
-    ([t, b]: any) => `${b - t}px`
+    (values: number[]) => {
+      const [t, b] = values;
+      return `${b - t}px`;
+    }
   );
 
   const ringTopOffsetUnspring = useTransform(smoothDelta, [-150, 0, 150], [-16, -16, -34]);
@@ -33,12 +36,113 @@ export default function CustomCursor() {
 
   const ringHeight = useTransform(
     [ringTopOffset, ringBottomOffset],
-    ([t, b]: any) => `${b - t}px`
+    (values: number[]) => {
+      const [t, b] = values;
+      return `${b - t}px`;
+    }
   );
+
+  const rotation = useMotionValue(0);
+  const animFrameRef = useRef<number | null>(null);
+
+  useEffect(() => {
+    let lastTime = performance.now();
+
+    const updateRotation = (now: number) => {
+      const delta = (now - lastTime) / 1000;
+      lastTime = now;
+
+      if (isHovered) {
+        rotation.set((rotation.get() + delta * 36) % 360);
+      }
+
+      animFrameRef.current = requestAnimationFrame(updateRotation);
+    };
+
+    animFrameRef.current = requestAnimationFrame(updateRotation);
+
+    return () => {
+      if (animFrameRef.current) cancelAnimationFrame(animFrameRef.current);
+    };
+  }, [isHovered, rotation]);
+
+  const TicksOverlay = () => {
+    const [params, setParams] = useState({ height: 32, angle: 0 });
+
+    useEffect(() => {
+      const update = () => {
+        const h = ringBottomOffset.get() - ringTopOffset.get();
+        setParams({ height: h, angle: (rotation.get() * Math.PI) / 180 });
+      };
+
+      const unSubTop = ringTopOffset.on("change", update);
+      const unSubBot = ringBottomOffset.on("change", update);
+      const unSubRot = rotation.on("change", update);
+      update();
+
+      return () => {
+        unSubTop();
+        unSubBot();
+        unSubRot();
+      };
+    }, []);
+
+    const { height, angle } = params;
+    const width = 32;
+
+    const strokeWidth = 1;
+    const tickLength = 5;
+    const gapOffset = 4;
+
+    const R = width / 2 + gapOffset;
+    const straightH = Math.max(0, height - width);
+    const halfStraight = straightH / 2;
+    const capArc = Math.PI * R;
+    const totalPerimeter = 2 * capArc + 2 * straightH;
+
+    return (
+      <svg className="w-full h-full overflow-visible pointer-events-none" viewBox="-50 -50 100 100">
+        {[0, 1, 2, 3].map((i) => {
+          const tAngle = (angle + Math.PI / 4 + (i * Math.PI) / 2) % (Math.PI * 2);
+          const normAngle = tAngle < 0 ? tAngle + Math.PI * 2 : tAngle;
+          const dist = (normAngle / (Math.PI * 2)) * totalPerimeter;
+
+          let x = 0, y = 0, nx = 0, ny = 0;
+
+          if (dist < straightH) {
+            x = R; y = -halfStraight + dist; nx = 1; ny = 0;
+          } else if (dist < straightH + capArc) {
+            const theta = ((dist - straightH) / capArc) * Math.PI;
+            nx = Math.cos(theta); ny = Math.sin(theta);
+            x = R * nx; y = halfStraight + R * ny;
+          } else if (dist < 2 * straightH + capArc) {
+            x = -R; y = halfStraight - (dist - (straightH + capArc)); nx = -1; ny = 0;
+          } else {
+            const theta = Math.PI + ((dist - (2 * straightH + capArc)) / capArc) * Math.PI;
+            nx = Math.cos(theta); ny = Math.sin(theta);
+            x = R * nx; y = -halfStraight + R * ny;
+          }
+
+          return (
+            <line
+              key={i}
+              x1={x}
+              y1={y}
+              x2={x + tickLength * nx}
+              y2={y + tickLength * ny}
+              stroke="var(--color-cyan)"
+              strokeWidth={strokeWidth}
+              strokeLinecap="round"
+            />
+          );
+        })}
+      </svg>
+    );
+  };
 
   useEffect(() => {
     const mediaQuery = window.matchMedia("(pointer: fine) and (hover: hover)");
-    
+
     const updatePointerType = () => {
       setIsFinePointer(mediaQuery.matches);
     };
@@ -93,6 +197,7 @@ export default function CustomCursor() {
 
   return (
     <div className={isVisible ? "opacity-100" : "opacity-0 transition-opacity duration-300"}>
+      {/* Center Dot */}
       <motion.div
         className="fixed w-1.5 rounded-full pointer-events-none z-[9999]"
         style={{
@@ -110,7 +215,7 @@ export default function CustomCursor() {
       />
 
       <motion.div
-        className="fixed w-8 rounded-full pointer-events-none z-[9998] border"
+        className="fixed w-8 rounded-full pointer-events-none z-[9998] border flex items-center justify-center overflow-visible"
         style={{
           left: ringX,
           top: ringY,
@@ -133,22 +238,15 @@ export default function CustomCursor() {
         }}
       >
         <motion.div
-          className="absolute inset-[-4px] pointer-events-none flex items-center justify-center"
+          className="absolute -inset-8 pointer-events-none flex items-center justify-center overflow-visible"
           animate={{
-            rotate: isHovered ? 360 : 0,
-            scale: isHovered ? 1 : 0.8,
-            opacity: isHovered ? 0.85 : 0,
+            opacity: isHovered ? 1 : 0,
           }}
           transition={{
-            rotate: { repeat: Infinity, duration: 10, ease: "linear" },
-            scale: { type: "spring", stiffness: 300, damping: 25 },
             opacity: { duration: 0.15 },
           }}
         >
-          <div className="absolute top-0 w-1 h-[1px] bg-[var(--color-cyan)] transform -translate-y-1/2 rotate-90" />
-          <div className="absolute bottom-0 w-1 h-[1px] bg-[var(--color-cyan)] transform translate-y-1/2 rotate-90" />
-          <div className="absolute left-0 w-1 h-[1px] bg-[var(--color-cyan)] transform -translate-x-1/2" />
-          <div className="absolute right-0 w-1 h-[1px] bg-[var(--color-cyan)] transform translate-x-1/2" />
+          <TicksOverlay />
         </motion.div>
       </motion.div>
     </div>
