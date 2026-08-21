@@ -163,7 +163,7 @@ function TeamCard({ team, index }: { team: typeof TEAMS[number]; index: number }
             <div className="absolute inset-0 bg-blue/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none z-10" />
           )}
 
-          <div className="relative z-10 flex flex-col gap-6">
+          <div className="relative z-10 flex flex-col gap-4 sm:gap-6">
             <div className="flex items-center gap-4 sm:gap-6 min-w-0">
               
               <div className="relative shrink-0 self-center">
@@ -187,9 +187,9 @@ function TeamCard({ team, index }: { team: typeof TEAMS[number]; index: number }
                     {team.title}
                   </h3>
 
-                  <div className="flex items-center gap-3 shrink-0">
+                  <div className="hidden sm:flex items-center gap-3 shrink-0">
                     <span
-                      className={`font-body text-[9px] sm:text-xs md:text-sm px-2 sm:px-3 md:px-4 py-0.5 sm:py-1 md:py-1.5 rounded-full uppercase tracking-widest ${
+                      className={`font-body text-xs md:text-sm px-3 md:px-4 py-1 md:py-1.5 rounded-full uppercase tracking-widest ${
                         hasUrl
                           ? 'text-blue border border-blue'
                           : 'text-gray border border-gray'
@@ -198,7 +198,7 @@ function TeamCard({ team, index }: { team: typeof TEAMS[number]; index: number }
                       {team.year}
                     </span>
                     {hasUrl && (
-                      <span className="relative inline-block h-4 w-4 sm:h-5 sm:w-5 overflow-hidden group-hover:translate-x-2 transition-transform duration-300">
+                      <span className="relative inline-block h-5 w-5 overflow-hidden group-hover:translate-x-2 transition-transform duration-300">
                         <img
                           src="/accents/element5.svg"
                           alt="Chevron"
@@ -224,10 +224,31 @@ function TeamCard({ team, index }: { team: typeof TEAMS[number]; index: number }
               </div>
 
             </div>
-
-            <p className="font-body text-gray text-sm sm:text-base leading-relaxed max-w-3xl pt-2">
+            <p className="font-body text-gray text-sm sm:text-base leading-relaxed max-w-3xl mt-1 sm:mt-2">
               {team.description}
             </p>
+
+            <div className="flex sm:hidden items-center justify-end gap-3 mt-2">
+              <span
+                className={`font-body text-[10px] px-2.5 py-0.5 rounded-full uppercase tracking-widest ${
+                  hasUrl
+                    ? 'text-blue border border-blue'
+                    : 'text-gray border border-gray'
+                }`}
+              >
+                {team.year}
+              </span>
+              {hasUrl && (
+                <span className="relative inline-block h-4 w-4 overflow-hidden">
+                  <img
+                    src="/accents/element5.svg"
+                    alt="Chevron"
+                    className="h-full w-full object-contain absolute inset-0"
+                  />
+                </span>
+              )}
+            </div>
+
           </div>
         </Component>
       </div>
