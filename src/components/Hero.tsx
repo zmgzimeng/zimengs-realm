@@ -112,10 +112,10 @@ export default function Hero() {
 
   return (
     <section 
-      id="top" 
-      className="relative min-h-screen flex flex-col justify-center pt-24 pb-12 w-full px-6 sm:px-8 lg:px-12"
+      id="top"
+      className="relative min-h-screen flex flex-col justify-center items-start pt-24 pb-12 w-full"
     >
-      <div className="max-w-4xl z-10 w-full overflow-visible">
+      <div className="z-10 w-full overflow-visible">
 
         <FadeIn delay={0.1} direction="down">
           <p className="font-body text-[10px] sm:text-sm tracking-widest text-gray uppercase mb-10">
@@ -155,7 +155,7 @@ export default function Hero() {
         </FadeIn>
 
         <div className="my-2 overflow-visible">
-          <div className="[clip-path:inset(-200px_-200px_0px_-200px)] -mr-12 pr-12">
+          <div className="[clip-path:inset(-200px_-200px_0px_-200px)]">
             <motion.h1 
               variants={cascadeContainerVariants}
               initial="hidden"
@@ -168,7 +168,7 @@ export default function Hero() {
                 <motion.span
                   key={index}
                   variants={riseLetterVariants}
-                  style={{ transformOrigin: 'bottom center' }}
+                  style={{ transformOrigin: 'bottom left' }}
                   className="inline-block whitespace-pre"
                 >
                   {char}
@@ -177,7 +177,7 @@ export default function Hero() {
             </motion.h1>
           </div>
 
-          <div className="[clip-path:inset(-200px_-200px_0px_-200px)] mt-2 -mr-12 pr-12">
+          <div className="[clip-path:inset(-200px_-200px_0px_-200px)] mt-2">
             <motion.h1 
               variants={cascadeContainerVariants}
               initial="hidden"
@@ -190,7 +190,7 @@ export default function Hero() {
                 <motion.span
                   key={index}
                   variants={riseLetterVariants}
-                  style={{ transformOrigin: 'bottom center' }}
+                  style={{ transformOrigin: 'bottom left' }}
                   className="inline-block whitespace-pre"
                 >
                   {char}

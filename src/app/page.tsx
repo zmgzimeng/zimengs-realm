@@ -5,7 +5,6 @@ import Teams from '@/components/Teams';
 import About from '@/components/About';
 import Contact from '@/components/Contact';
 import Footer from '@/components/Footer';
-import GridOverlay from '@/components/GridOverlay';
 import Starfield from '@/components/Starfield';
 import Divider from '@/components/Divider';
 
@@ -13,7 +12,6 @@ export default function Home() {
   return (
     <div className="relative bg-[var(--color-bg)] text-white min-h-screen w-full overflow-x-hidden">
       <Starfield />
-      <GridOverlay />
 
       <Navbar />
 
