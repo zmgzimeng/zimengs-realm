@@ -58,7 +58,7 @@ function MagneticSocialIcon({ href, unhovered, hovered, label }: { href: string;
     const centerX = rect.left + rect.width / 2;
     const centerY = rect.top + rect.height / 2;
 
-    const screenFactor = typeof window !== 'undefined' ? Math.min(Math.max(window.innerWidth / 1200, 0.4), 1) : 1;
+    const screenFactor = typeof window !== 'undefined' ? Math.min(Math.max(window.innerWidth / 1200, 0.3), 1) : 1;
 
     const distanceX = (e.clientX - centerX) * 0.2 * screenFactor;
     const distanceY = (e.clientY - centerY) * 0.2 * screenFactor;
@@ -166,7 +166,7 @@ export default function Contact() {
     const maxDistanceX = rect.width / 2;
     const maxDistanceY = rect.height / 2;
 
-    const screenFactor = typeof window !== 'undefined' ? Math.min(Math.max(window.innerWidth / 1200, 0.4), 1) : 1;
+    const screenFactor = typeof window !== 'undefined' ? Math.min(Math.max(window.innerWidth / 1200, 0.3), 1) : 1;
 
     const rawX = (e.clientX - centerX) * 0.22 * screenFactor;
     const rawY = (e.clientY - centerY) * 0.45 * screenFactor;
@@ -209,11 +209,12 @@ export default function Contact() {
         <img 
           src="/accents/element1.svg" 
           alt="Chevron"
-          className="h-4 w-auto opacity-80"
+          style={{ height: 'clamp(0.75rem, 1.5vw, 1rem)' }}
+          className="w-auto opacity-80"
         />
         
         <FadeIn delay={0.1} direction="up">
-          <div className="font-body text-base sm:text-2xl font-bold tracking-widest text-silver1 uppercase flex flex-col gap-2">
+          <div className="font-body text-base sm:text-xl lg:text-2xl font-bold tracking-widest text-silver1 uppercase flex flex-col gap-2">
             <span>INTERESTING PROBLEM? NEW IDEA?</span>
             <span>OR JUST WANT TO TALK?</span>
           </div>
@@ -239,7 +240,7 @@ export default function Contact() {
               whileInView="visible"
               viewport={{ once: true }}
               custom={0.25}
-              className="font-display text-[clamp(3.2rem,8.5vw,6.5rem)] text-transparent [-webkit-text-stroke:1px_#5A79B3] sm:[-webkit-text-stroke:2px_#5A79B3] leading-none flex items-baseline overflow-visible select-none"
+              className="font-display text-[clamp(3.2rem,8vw,6.5rem)] lg:text-[6.5rem] text-transparent [-webkit-text-stroke:1px_#5A79B3] sm:[-webkit-text-stroke:2px_#5A79B3] leading-none flex items-baseline overflow-visible select-none"
             >
               <span className="inline-flex overflow-visible [clip-path:inset(-200px_-200px_0px_-200px)]">
                 {sayHiChars.map((char, index) => (
@@ -304,7 +305,7 @@ export default function Contact() {
                     ? `inset(0 ${clipRight}% 0 0)` 
                     : `inset(0 0 0 ${Math.abs(clipRight)}%)`,
                 }}
-                className="absolute inset-0 font-display text-[clamp(3.2rem,8.5vw,6.5rem)] text-[var(--color-blue)] [-webkit-text-fill-color:var(--color-blue)] leading-none flex items-baseline select-none"
+                className="absolute inset-0 font-display text-[clamp(3.2rem,8vw,6.5rem)] lg:text-[6.5rem] text-[var(--color-blue)] [-webkit-text-fill-color:var(--color-blue)] leading-none flex items-baseline select-none"
               >
                 <span className="inline-flex overflow-visible [clip-path:inset(-200px_-200px_0px_-200px)]">
                   {sayHiChars.map((char, index) => (

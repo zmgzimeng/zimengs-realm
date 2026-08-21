@@ -127,26 +127,29 @@ export default function Hero() {
             <img 
               src="/accents/element1.svg" 
               alt="Chevron"
-              className="h-4 w-auto opacity-80"
+              style={{ height: 'clamp(0.75rem, 1.5vw, 1rem)' }}
+              className="w-auto opacity-80"
             />
-            <motion.span 
+            <motion.div 
               variants={cascadeContainerVariants}
               initial="hidden"
               whileInView="visible"
               viewport={{ once: true }}
               custom={0.25}
-              className="font-body text-xl sm:text-3xl font-bold tracking-widest text-silver1 uppercase inline-flex items-baseline"
+              className="font-body text-base sm:text-xl lg:text-2xl font-bold tracking-widest text-silver1 uppercase flex flex-col gap-2"
             >
-              {"WELCOME TO".split('').map((char, index) => (
-                <motion.span
-                  key={index}
-                  variants={cascadeLetterVariants}
-                  className="inline-block whitespace-pre"
-                >
-                  {char}
-                </motion.span>
-              ))}
-            </motion.span>
+              <span>
+                {"WELCOME TO".split('').map((char, index) => (
+                  <motion.span
+                    key={index}
+                    variants={cascadeLetterVariants}
+                    className="inline-block whitespace-pre"
+                  >
+                    {char}
+                  </motion.span>
+                ))}
+              </span>
+            </motion.div>
           </div>
         </FadeIn>
 
