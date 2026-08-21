@@ -24,13 +24,28 @@ export const metadata: Metadata = {
     url: "https://zimengsrealm.com",
     siteName: "Zimeng's Realm",
     type: "website",
+    images: [
+      {
+        url: "/og.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Zimeng's Realm",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Zimeng's Realm",
+    description:
+      "Welcome to Zimeng's Realm. Explore a portfolio featuring interactive web applications, robotics projects, and more.",
+    images: ["/og.jpg"],
   },
 };
 
 export const viewport: Viewport = {
-  width: 'device-width',
+  width: "device-width",
   initialScale: 1,
-  viewportFit: 'cover',
+  viewportFit: "cover",
 };
 
 export default function RootLayout({
@@ -82,7 +97,7 @@ export default function RootLayout({
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
       </head>
-      <body 
+      <body
         className="font-body bg-slate-950 text-slate-100 min-h-screen"
         suppressHydrationWarning
       >
