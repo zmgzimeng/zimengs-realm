@@ -136,7 +136,7 @@ export default function Hero() {
               whileInView="visible"
               viewport={{ once: true }}
               custom={0.25}
-              className="font-body text-base sm:text-xl lg:text-2xl font-bold tracking-widest text-silver1 uppercase flex flex-col gap-2"
+              className="font-body text-[clamp(0.875rem,1.5vw,1.5rem)] sm:text-xl lg:text-2xl font-bold tracking-widest text-silver1 uppercase flex flex-col gap-2"
             >
               <span>
                 {"WELCOME TO".split('').map((char, index) => (

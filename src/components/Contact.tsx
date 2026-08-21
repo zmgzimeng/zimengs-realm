@@ -214,7 +214,7 @@ export default function Contact() {
         />
         
         <FadeIn delay={0.1} direction="up">
-          <div className="font-body text-base sm:text-xl lg:text-2xl font-bold tracking-widest text-silver1 uppercase flex flex-col gap-2">
+          <div className="font-body text-[clamp(0.875rem,1.5vw,1.5rem)] sm:text-xl lg:text-2xl font-bold tracking-widest text-silver1 uppercase flex flex-col gap-2">
             <span>INTERESTING PROBLEM? NEW IDEA?</span>
             <span>OR JUST WANT TO TALK?</span>
           </div>
