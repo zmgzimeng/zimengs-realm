@@ -51,7 +51,7 @@ export default function Works() {
   const worksChars = ['W', 'O', 'R', 'K', 'S'];
 
   return (
-    <section id="works" className="min-h-screen pt-24 pb-12 w-full">
+    <section id="works" className="min-h-screen pt-20 pb-12 w-full">
       <motion.h2 
         variants={cascadeContainerVariants}
         initial="hidden"

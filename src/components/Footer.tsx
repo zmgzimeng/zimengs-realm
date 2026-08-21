@@ -140,7 +140,7 @@ export default function Footer() {
           className="relative z-40 w-[92%] mx-auto py-6 flex flex-col lg:flex-row items-center justify-between gap-4 font-body text-xs tracking-wider"
         >
           <p className="text-center lg:text-left">
-            © {new Date().getFullYear()} Zimeng's Realm
+            © {new Date().getFullYear()} Zimeng Zhang
           </p>
 
           <p className="text-center lg:text-right normal-case tracking-normal sm:text-xs text-[11px] opacity-90">

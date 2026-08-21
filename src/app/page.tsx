@@ -1,8 +1,8 @@
 import Navbar from '@/components/Navbar';
 import Hero from '@/components/Hero';
 import Works from '@/components/Works';
+import Teams from '@/components/Teams';
 import About from '@/components/About';
-import Affiliations from '@/components/Affiliations';
 import Footer from '@/components/Footer';
 import GridOverlay from '@/components/GridOverlay';
 import Starfield from '@/components/Starfield';
@@ -23,10 +23,10 @@ export default function Home() {
         <Works />
         <Divider className="my-8" />
 
-        <About />
+        <Teams />
         <Divider className="my-8" />
 
-        <Affiliations />
+        <About />
         <Footer />
       </main>
     </div>

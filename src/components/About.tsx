@@ -85,7 +85,7 @@ export default function About() {
   };
 
   return (
-    <section id="about" className="min-h-screen pt-24 pb-12 w-full">
+    <section id="about" className="min-h-screen pt-20 pb-12 w-full">
       <motion.h2 
         variants={cascadeContainerVariants}
         initial="hidden"
@@ -132,7 +132,7 @@ export default function About() {
               className="relative w-full h-full overflow-hidden z-10 will-change-transform"
             >
               <Image
-                src="/desk.jpg"
+                src="/images/desk.jpg"
                 alt="Workstation"
                 fill
                 sizes="(max-width: 768px) 100vw, 40vw"

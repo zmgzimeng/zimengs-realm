@@ -24,19 +24,17 @@ export default function Chevron({
     restDelta: 0.001,
   });
 
-  // Unclamped scroll transformation
   const rawX = useTransform(smoothScrollY, (y) => (y / 2000) * speed);
   const xPercent = useMotionValue(-25);
 
   useMotionValueEvent(rawX, "change", (latest) => {
-    const percentShift = (latest / 20) % 50; 
-    // Positive shift translates the element rightward as scroll increases
+    const percentShift = (latest / 20) % 50;
     const wrapped = wrap(-50, 0, percentShift - 25);
     xPercent.set(wrapped);
   });
 
   return (
-    <div className={`relative left-1/2 right-1/2 -ml-[50vw] -mr-[50vw] w-screen overflow-hidden select-none pointer-events-none py-4 ${className}`}>
+    <div className={`relative left-1/2 right-1/2 -ml-[50vw] -mr-[50vw] w-screen overflow-hidden select-none pointer-events-none py-1 ${className}`}>
       <motion.div 
         style={{ x: useTransform(xPercent, (v) => `${v}%`) }} 
         className="flex whitespace-nowrap min-w-max transform-gpu will-change-transform"

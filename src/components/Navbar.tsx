@@ -5,8 +5,8 @@ import { motion, useMotionValue, useSpring } from 'framer-motion';
 
 const navLinks = [
   { name: 'Works', href: '#works' },
+  { name: 'Teams', href: '#teams' },
   { name: 'About', href: '#about' },
-  { name: 'Affiliations', href: '#affiliations' },
   { name: 'Contact', href: 'https://www.linkedin.com/in/zmgzimeng/', external: true },
 ];
 
@@ -90,9 +90,8 @@ function NavLink({ link }: { link: (typeof navLinks)[number] }) {
 export default function Navbar() {
   const [rotation, setRotation] = useState(0);
   const [isLogoHovered, setIsLogoHovered] = useState(false);
-  const logoRef = useRef<HTMLAnchorElement>(null);
+  const logoRef = useRef<HTMLButtonElement>(null);
 
-  // Magnetic position tracking for logo
   const logoMouseX = useMotionValue(0);
   const logoMouseY = useMotionValue(0);
 
@@ -105,7 +104,7 @@ export default function Navbar() {
     setRotation((prev) => prev + 360);
   };
 
-  const handleLogoMouseMove = (e: MouseEvent<HTMLAnchorElement>) => {
+  const handleLogoMouseMove = (e: MouseEvent<HTMLButtonElement>) => {
     if (!logoRef.current) return;
     const rect = logoRef.current.getBoundingClientRect();
     const centerX = rect.left + rect.width / 2;
@@ -124,6 +123,21 @@ export default function Navbar() {
     logoMouseY.set(0);
   };
 
+  const scrollToTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth',
+    });
+
+    if (window.location.hash) {
+      window.history.replaceState(
+        null,
+        document.title,
+        window.location.pathname + window.location.search
+      );
+    }
+  };
+
   return (
     <motion.header
       initial={{ y: -80, opacity: 0 }}
@@ -136,14 +150,16 @@ export default function Navbar() {
       className="hidden sm:block fixed top-0 left-0 right-0 z-40 backdrop-blur-md bg-[var(--color-bg)]/60 border-b border-solid [border-image:linear-gradient(to_right,transparent,var(--color-silver2),var(--color-silver1),var(--color-silver2),transparent)_1]"
     >
       <div className="w-[92%] mx-auto h-18 flex items-center justify-between">
-        <motion.a
+        <motion.button
           ref={logoRef}
-          href="#top"
+          type="button"
+          onClick={scrollToTop}
           onMouseEnter={handleLogoMouseEnter}
           onMouseMove={handleLogoMouseMove}
           onMouseLeave={handleLogoMouseLeave}
           style={{ x: logoX, y: logoY }}
-          className="flex items-center gap-3 cursor-pointer select-none"
+          aria-label="Scroll to top"
+          className="flex items-center gap-3 cursor-pointer select-none border-none bg-transparent p-0 outline-none focus:outline-none"
         >
           <motion.img
             src="/myzar.svg"
@@ -158,7 +174,7 @@ export default function Navbar() {
               scale: { duration: 0.25, ease: 'easeOut' },
             }}
           />
-        </motion.a>
+        </motion.button>
 
         <nav className="flex items-center gap-4 md:gap-8 font-body text-xs tracking-wider uppercase">
           {navLinks.map((link) => (
