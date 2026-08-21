@@ -9,18 +9,18 @@ import "@/app/globals.css";
 export const metadata: Metadata = {
   metadataBase: new URL("https://zimengsrealm.com"),
   title: {
-    default: "Zimeng's Realm",
+    default: "Zimeng's Realm | Interactive Portfolio",
     template: "%s | Zimeng's Realm",
   },
   description:
-    "Welcome to Zimeng's Realm. Explore a portfolio featuring interactive web applications, robotics projects, and more.",
+    "Explore Zimeng's Realm, a portfolio featuring interactive web applications, robotics projects, and more.",
   icons: {
     icon: "/favicon.ico",
   },
   openGraph: {
-    title: "Zimeng's Realm",
+    title: "Zimeng's Realm | Interactive Portfolio",
     description:
-      "Welcome to Zimeng's Realm. Explore a portfolio featuring interactive web applications, robotics projects, and more.",
+      "Explore Zimeng's Realm, a portfolio featuring interactive web applications, robotics projects, and more.",
     url: "https://zimengsrealm.com",
     siteName: "Zimeng's Realm",
     type: "website",
@@ -35,9 +35,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Zimeng's Realm",
+    title: "Zimeng's Realm | Interactive Portfolio",
     description:
-      "Welcome to Zimeng's Realm. Explore a portfolio featuring interactive web applications, robotics projects, and more.",
+      "Explore Zimeng's Realm, a portfolio featuring interactive web applications, robotics projects, and more.",
     images: ["/og.jpg"],
   },
 };
@@ -62,7 +62,7 @@ export default function RootLayout({
         url: "https://zimengsrealm.com",
         name: "Zimeng's Realm",
         description:
-          "Welcome to Zimeng's Realm. Explore a portfolio featuring interactive web applications, robotics projects, and more.",
+          "Explore Zimeng's Realm, a portfolio featuring interactive web applications, robotics projects, and more.",
       },
       {
         "@type": "SiteNavigationElement",
