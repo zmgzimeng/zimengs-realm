@@ -157,7 +157,7 @@ export default function About() {
 
               <blockquote className="py-2">
                 <p className="font-script text-3xl sm:text-4xl md:text-4xl lg:text-5xl text-silver1/90 leading-snug">
-                  “ To achieve great things, two things are needed—a plan, and not quite enough time.”
+                  “ If it were easy, then doing it wouldn't be nearly as cool.”
                 </p>
               </blockquote>
 
