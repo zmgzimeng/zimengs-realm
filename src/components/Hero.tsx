@@ -92,11 +92,15 @@ export default function Hero() {
   const scrollOpacity = useTransform(smoothScrollY, [0, 600], [1, 0]);
 
   const handleTakeMeSomewhere = () => {
+    const userConfirmed = window.confirm('Taking off to a random project in a new tab...');
+
     const worksSection = document.getElementById('works');
     if (worksSection) {
       worksSection.scrollIntoView({ behavior: 'smooth' });
       window.history.pushState(null, '', '#works');
     }
+
+    if (!userConfirmed) return;
 
     const validWorks = WORKS.filter((work) => Boolean(work.url));
     if (validWorks.length === 0) return;
