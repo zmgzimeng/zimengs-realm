@@ -45,14 +45,16 @@ body::-webkit-scrollbar {
   display: none;
 }
 
+/* Safari dims fully opaque selection colors; a near-opaque alpha opts out. */
 ::selection {
-  background-color: var(--color-pink);
+  background-color: rgb(160 97 138 / 0.996); /* --color-pink */
   color: var(--color-bg);
   -webkit-text-fill-color: var(--color-bg);
+  -webkit-text-stroke-color: transparent; /* Safari keeps outlined text's stroke otherwise */
 }
 
 ::-moz-selection {
-  background-color: var(--color-pink);
+  background-color: rgb(160 97 138 / 0.996); /* --color-pink */
   color: var(--color-bg);
   -webkit-text-fill-color: var(--color-bg);
 }

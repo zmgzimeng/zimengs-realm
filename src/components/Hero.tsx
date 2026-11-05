@@ -173,7 +173,7 @@ export default function Hero() {
                   key={index}
                   variants={riseLetterVariants}
                   style={{ transformOrigin: 'bottom left' }}
-                  className="inline-block whitespace-pre"
+                  className="inline-block align-top whitespace-pre"
                 >
                   {char}
                 </motion.span>
@@ -195,7 +195,7 @@ export default function Hero() {
                   key={index}
                   variants={riseLetterVariants}
                   style={{ transformOrigin: 'bottom left' }}
-                  className="inline-block whitespace-pre"
+                  className="inline-block align-top whitespace-pre"
                 >
                   {char}
                 </motion.span>
