@@ -26,7 +26,9 @@ export default function Starfield() {
     let lastWidth = window.innerWidth;
 
     const BASE_DEPTH = 1000;
-    const params = { speed: 1, count: 400, life: 5 };
+    const MIN_SPEED = 1.5;
+    const MAX_SPEED = 7.5;
+    const params = { speed: MIN_SPEED, count: 400, life: 5 };
 
     // HSV to RGB
     function hsvToRgb(h: number, s: number, v: number) {
@@ -111,11 +113,11 @@ export default function Starfield() {
         const calculatedOpacity = scale > params.life ? (2 - scale / params.life) * 1.5 : 1;
         const finalOpacity = Math.min(this.opacity, calculatedOpacity);
 
-        const weight = Math.max(2, Math.pow(scale, 0.8) * 1.2);
+        const weight = Math.max(3, Math.pow(scale, 0.8) * 1.8);
 
         this.ctx.beginPath();
         this.ctx.strokeStyle = `rgba(${this.r}, ${this.g}, ${this.b}, ${finalOpacity})`;
-        this.ctx.lineWidth = Math.min(weight, 6);
+        this.ctx.lineWidth = Math.min(weight, 9);
         this.ctx.lineCap = 'round';
         
         this.ctx.moveTo(prevX, prevY);
@@ -169,13 +171,13 @@ export default function Starfield() {
     const handleScroll = () => {
       const scrollY = window.scrollY;
 
-      const scrollVal = 0.5 + scrollY / 80;
-      if (scrollVal <= 0.5) {
-        params.speed = 0.5;
-      } else if (scrollVal < 6) {
+      const scrollVal = MIN_SPEED + scrollY / 65;
+      if (scrollVal <= MIN_SPEED) {
+        params.speed = MIN_SPEED;
+      } else if (scrollVal < MAX_SPEED) {
         params.speed = scrollVal;
       } else {
-        params.speed = 6;
+        params.speed = MAX_SPEED;
       }
 
       const worksSection = document.getElementById('works');
