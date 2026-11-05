@@ -14,9 +14,6 @@ export const metadata: Metadata = {
   },
   description:
     "Explore Zimeng's Realm, a portfolio featuring interactive web applications, robotics projects, and more.",
-  icons: {
-    icon: "/favicon.ico",
-  },
   openGraph: {
     title: "Zimeng's Realm — Portfolio",
     description:
